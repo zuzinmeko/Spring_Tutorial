@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>MVC 2</title>
+</head>
+<body>
+<h3>Spring MVC Tutorial 2</h3>
+<p><a href="#" th:href="@{/customers}">All customer</a><br /></p>
+<p><a href="#" th:href="@{/customers/add}">Add customer</a><br /></p>
+
+<form action="#" th:action="@{/customers/public}" method="post">
+	<input type="submit" value="Send" />
+</form>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>MVC 2</title>
+</head>
+<body>
+<h3>Spring MVC Tutorial 2</h3>
+<a href="#">All customer</a>
+</body>
+</html>
