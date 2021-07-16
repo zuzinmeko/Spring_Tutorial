@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Product</title>
+<link rel="stylesheet" th:href="@{webjars/bootstrap/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{webjars/font-awesome/css/all.min.css}" />
+<script type="text/javascript" th:src="@{webjars/jquery/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{webjars/bootstrap/js/bootstrap.min.js}"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-4">
+				<h3>Product</h3>
+			</div>
+			<div class="col-9">
+				<a href="#" class="btn btn-primary">Add</a>
+			</div>
+			<table>
+					<tr>
+						<th>Id</th>
+						<th>Name</th>
+						<th>Price</th>
+						<th>Description</th>
+						<th>Brand</th>
+						<th>Category</th>
+					</tr>
+				</table>
+		</div>
+	</div>
+</body>
+</html>

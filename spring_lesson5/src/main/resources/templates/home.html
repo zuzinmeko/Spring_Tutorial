@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Customers</title>
+<link rel="stylesheet" th:href="@{webjars/bootstrap/4.6.0/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{webjars/font-awesome/5.15.0/css/all.min.css}" />
+<script type="text/javascript" th:src="@{webjars/jquery/3.4.1/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{webjars/bootstrap/4.6.0/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div class="container mt-4">
+	<div class="row">
+		<div class="col-7">
+			<h3>All customers</h3><hr style="border: 1px bold" />
+		</div><br />
+		<div class="col-2 mt-4">
+			<a th:href="@{/customers/add}" class="btn btn-primary pl-3 pr-3" style="margin: "><i class="fas fa-check pl-2"></i>Add </a>
+		</div>
+	</div>
+	<table class="table mt-3">
+		<tr style="color: blue">
+			<th>Name</th>
+			<th>Email</th>
+			<th>City</th>
+			<th>Address</th>
+			<th>Phone</th>
+			<th>Gender</th>
+		</tr>
+		<tr th:each="c : ${customers}">
+			<td th:text="${c.name}">name</td>
+			<td th:text="${c.email}">email</td>
+			<td th:text="${c.city}">city</td>
+			<td th:text="${c.address}">address</td>
+			<td th:text="${c.phone}">phone</td>
+			<td th:text="${c.gender}">gender</td>
+		</tr>
+	</table>
+</div>
+</body>
+</html>

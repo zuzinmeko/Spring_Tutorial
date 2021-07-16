@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Customer | Add</title>
+<link rel="stylesheet" th:href="@{webjars/bootstrap/4.6.0/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{webjars/font-awesome/5.15.0/css/all.min.css}" />
+<script type="text/javascript" th:src="@{webjars/jquery/3.4.1/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{webjars/bootstrap/4.6.0/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div class="container mt-4">
+	<div class="row">
+		<div class="col-7">
+			<h3>Customer</h3><hr style="border: 1px bold" />
+		</div><br />
+		<div class="col-2 mt-4">
+			<a th:href="@{/customers}" class="btn btn-primary pl-3 pr-3" style="margin: "><i class="fas fa-check pl-2"></i>Go to home </a>
+		</div>
+	</div>
+	<div class="col-7">
+	<form th:object="${customer}" th:action="@{/customers/save}" class="form mt-3" method="post">
+		<div class="form-group">
+			<label>Name</label>
+			<input th:field="*{name}" type="text" placeholder="Enter Your Name" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label>Email</label>
+			<input th:field="*{email}" type="email" placeholder="Enter Your Email" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label>Phone</label>
+			<input th:field="*{phone}" type="text" placeholder="Enter Your Phone" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label >Gender</label>
+			<span th:each="gen,ids : ${genders}">
+			<input type="radio" th:field="*{gender}" th:value="${gen}" th:id="'rad'+${ids.count}"/>
+			<label th:text="${gen}" th:for="'rad'+${ids.count}"></label>
+			</span>
+		</div>
+		<div class="form-group">
+			<label >City</label>
+			<select class="form-control" th:field="*{city}">
+				<option th:each="city : ${cities}" th:value="${city}" th:text="${city}"></option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label>Address</label>
+			<textarea th:field="*{address}" rows="4" cols="20" placeholder="Enter your  Address" class="form-control"></textarea>
+		</div>
+		<button type="submit" class="btn btn-primary">
+			<i class="fas fa-save"></i>Save
+		</button>
+	</form>
+	</div>
+</div>
+</body>
+</html>
