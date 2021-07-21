@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title> Product |add </title>
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/4.6.0/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/webjars/font-awesome/5.15.0/css/all.min.css}" />
+<script type="text/javascript" th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/webjars/bootstrap/4.6.0/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div class="container mt-4">
+	<div class="row">
+		<div class="col-10">
+			<h3 th:text="${product.id==0} ? 'Add-Product' :'Edit Product'"></h3>
+		</div>
+		<div class="col">
+			<a  th:href="@{/}" class="btn btn-primary pl-4 pr-4 mt-4 mb-3">
+				<i class="fas fa-check"></i>Products
+			</a>
+		</div>
+	</div>
+	<form th:action="@{/save}" class="form col-7" method="post" th:object="${product}">
+	<input type="hidden" th:field="*{id}" />
+	<div class="form-group">
+		<label>Name</label>
+		<input type="text" class="form-control" placeholder="Enter name" th:field="*{name}"/>
+	</div>
+	<div class="form-group">
+		<label>Brand</label>
+		<input type="text" class="form-control" placeholder="Enter brand name" th:field="*{brand}"/>
+	</div>
+	<div class="form-group">
+		<label>Category</label>
+		<input type="text" class="form-control" placeholder="Enter category name" th:field="*{category}"/>
+	</div>
+	<div class="form-group">
+		<label>Price</label>
+		<input type="number" class="form-control" placeholder="Enter price" th:field="*{price}"/>
+	</div>
+	<div class="form-group">
+		<label>Description</label>
+		<input type="text" class="form-control" placeholder="Enter description" th:field="*{description}"/>
+	</div>
+	<div class="form-group">
+		<input type="submit" class="btn btn-primary" value="save" />
+	</div>
+	</form>
+	</div>
+</body>
+</html>

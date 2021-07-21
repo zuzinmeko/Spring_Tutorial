@@ -35,7 +35,7 @@ public class CustomerController {
 	public String addCustomer(ModelMap model) {
 		//model.addAttribute("customer",new Customer());
 		//model.addAttribute("cities",cityRepo.getCities());
-		model.addAttribute("gender",Gender.values());
+		model.addAttribute("genders",Gender.values());
 		return "add";
 	}
 	@PostMapping("save")
